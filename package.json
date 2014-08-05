@@ -1,6 +1,10 @@
 {
   "name": "Cipher",
   "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:flatiron-school-curriculum/simpleCipher.js.git"
+  },
   "description": "Simple Cipher",
   "dependencies": {
     "grunt": "~0.4.1",
