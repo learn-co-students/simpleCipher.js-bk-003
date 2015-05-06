@@ -1,0 +1,5 @@
+javascripts:
+  files:
+    - lib/cipher.js
+  specs:
+    - spec/cipher.spec.js

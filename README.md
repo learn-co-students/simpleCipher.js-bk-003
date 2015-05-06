@@ -4,17 +4,10 @@ tags: cipher, hard
 ---
 
 # Simple Cipher
-## Getting Started
 
-Run `npm install`
-
-## Tests
+## Instructions
 
 Review the `cipher.js` file inside the `lib` directory, and then the `cipher.spec.js` file inside the `spec` directory. Review each of the tests, and then start implementing your solutions to make each test pass in `cipher.js`.
-
-Run `grunt watch` then edit your files. Grunt will watch for changes. Grunt
-will only run tests that start with `it`. When you finish passing a test,
-remove the `x` from `xit` to convert it to a runnable test.
 
 ## Background
 
@@ -27,13 +20,21 @@ Ciphers are very straight-forward algorithms that allow us to render text less r
 
 The Caeser Cipher was used for some messages from Julius Caesar that were sent afield. Now Caeser knew that the cipher wasn't very good, but he had one ally in that respect: almost nobody could read well. So even being a couple letters off was sufficient so that people couldn't recognize the few words that they did know.
 
-Your task is to create a simple shift cipher like the Caesar Cipher. This image is a great example of the Caesar Cipher: ![Caesar Cipher](http://en.wikipedia.org/wiki/File:Caesar_cipher_left_shift_of_3.svg)
+Your task is to create a simple shift cipher like the Caesar Cipher. This image is a great example of the Caesar Cipher: 
+
+![Caesar Cipher](http://en.wikipedia.org/wiki/Caesar_cipher#/media/File:Caesar_cipher_left_shift_of_3.svg)
 
 Here are some examples:
 
-    @cipher = Cipher.new
-    @cipher.encode("iamapandabear") #=> "ldpdsdqgdehdu"
-    @cipher.decode("ldpdsdqgdehdu") #=> "iamapandabear"
+```javascript
+var cipher = new Cipher();
+
+cipher.encode("iamapandabear")
+// => "ldpdsdqgdehdu"
+
+cipher.decode("ldpdsdqgdehdu")
+// => "iamapandabear"
+```
 
 ### Step 2
 
@@ -41,10 +42,15 @@ Shift ciphers are no fun though when your kid sister figures it out. Try amendin
 
 Here's an example:
 
-    @cipher = Cipher.new("aaaaaaaaaaaaaaaaaa")
-    @cipher.encode("iamapandabear") #=> "iamapandabear"
-    @cipher = Cipher.new("ddddddddddddddddd")
-    @cipher.encode("imapandabear") #=> "lpdsdqgdehdu"
+```javascript
+var cipherOne = new Cipher("aaaaaaaaaaaaaaaaaa");
+cipherOne.encode("iamapandabear")
+// => "iamapandabear"
+
+var cipherTwo = new Cipher("ddddddddddddddddd");
+cipherTwo.encode("imapandabear")
+// => "lpdsdqgdehdu"
+```
 
 In the example above, we've set a = 0 for the key value. So when the plaintext is added to the key, we end up with the same message coming out. So "aaaa" is not an ideal key. But if we set the key to "dddd", we would get the same thing as the Caesar Cipher.
 
@@ -52,13 +58,17 @@ In the example above, we've set a = 0 for the key value. So when the plaintext i
 
 The weakest link in any cipher is the human being. Let's make your substitution cipher a little more fault tolerant by providing a source of randomness and ensuring that they key is not composed of numbers or capital letters.
 
-If someone doesn't submit a key at all, generate a truly random key of at least 100 characters in length, accessible via Cipher#key (the # syntax means instance variable)
+If someone doesn't submit a key at all, generate a truly random key of at least 100 characters in length, accessible via Cipher#key (the # syntax means instance variable).
 
 If the key submitted has capital letters or numbers, throw an ArgumentError with a message to that effect.
 
 Some examples:
-    @cipher = Cipher.new
-    @cipher.key #=> "duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsygzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu"
+
+```
+var cipher = new Cipher();
+cipher.key 
+// => "duxrceqyaimciuucnelkeoxjhdyduucpmrxmaivacmybmsdrzwqxvbxsygzsabdjmdjabeorttiwinfrpmpogvabiofqexnohrqu"
+```
 
 ### Extensions
 
