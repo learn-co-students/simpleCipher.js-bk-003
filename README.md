@@ -22,7 +22,7 @@ The Caeser Cipher was used for some messages from Julius Caesar that were sent a
 
 Your task is to create a simple shift cipher like the Caesar Cipher. This image is a great example of the Caesar Cipher: 
 
-![Caesar Cipher](http://en.wikipedia.org/wiki/Caesar_cipher#/media/File:Caesar_cipher_left_shift_of_3.svg)
+![Caesar Cipher](http://upload.wikimedia.org/wikipedia/commons/4/4a/Caesar_cipher_left_shift_of_3.svg)
 
 Here are some examples:
 
