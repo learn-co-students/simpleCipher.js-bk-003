@@ -1,7 +1,4 @@
----
-languages: javascript
-tags: cipher, hard
----
+
 
 # Simple Cipher
 
